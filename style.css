@@ -72,6 +72,9 @@ body {
   font-size: 2rem; /* 可自行調整 */
 }
 
+/* ------------首頁部分------------ */
+
+
 #news-container {
   background-color: white; /* 底圖為白色 */
   padding: 0; /* 移除 padding */
@@ -163,4 +166,110 @@ footer {
   border-top: 1px solid #555; /* 在版權資訊上方增加一條分隔線 */
   padding-top: 1rem;
   margin-top: 1rem;
+}
+
+
+/* ------------關於我們部分------------ */
+
+/* 關於我們頁面主體樣式 */
+.about-page {
+  max-width: 1200px; /* 限制頁面內容最大寬度 */
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* 關於我們介紹區塊 */
+.about-hero {
+  text-align: center;
+  background-color: #f8f9fa;
+  padding: 3rem 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.about-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1a5276;
+}
+
+/* 使命與願景區塊 */
+.mission {
+  margin-bottom: 2rem;
+}
+
+.mission h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1a5276;
+}
+
+.mission-content {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mission-item {
+  flex: 1 1 300px; /* 讓每個項目佔據一定寬度，並在小螢幕上換行 */
+  background-color: #e9ecef;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* 組織架構區塊 */
+.organization {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.organization img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 團隊成員介紹區塊，維持原樣 */
+.team {
+  margin-bottom: 2rem;
+}
+
+.team h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1a5276;
+}
+
+/* 新增：每個橫列的 Flexbox 容器 */
+.team-row {
+  display: flex;
+  justify-content: center; /* 水平置中 */
+  gap: 2rem;
+  margin-bottom: 2rem; /* 讓每個橫列之間有間距 */
+}
+
+/* 讓所有雙排的成員外框變寬 */
+.team-member.leader {
+  flex: 1 1 calc(50% - 2rem); /* 各佔據一行的一半 */
+  max-width: 400px; /* 設定最大寬度，避免在超大螢幕上過寬 */
+  background-color: #f8f9fa;
+  padding: 2rem; /* 增加內邊距，讓框看起來更大 */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* 單獨排版的機動組 */
+.team-member.leader-solo {
+  width: 100%; /* 佔據整行寬度 */
+  max-width: 400px; /* 設定最大寬度，與其他成員一致 */
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 0 auto;
 }
