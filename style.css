@@ -6,7 +6,7 @@
 }
 
 .top-layer {
-  background-image: url("/images/HLHS_2.jpg");  /* 改成你的圖片路徑 */
+  background-image: url("images/HLHS_2.jpg");  /* 改成你的圖片路徑 */
   background-size: 100% auto;
   background-position: center;
   background-repeat: no-repeat;
@@ -272,4 +272,5 @@ footer {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   margin: 0 auto;
+
 }
