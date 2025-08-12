@@ -5,13 +5,14 @@
   box-sizing: border-box;
 }
 
-.top-layer {
-  background-size: 100% auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 1rem 1rem;
-  height: 25rem;
-  color: white; /* 文字白色，確保可讀 */
+.hero-background-image {
+  position: absolute; /* 絕對定位，讓它在背景層次 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 讓圖片覆蓋整個容器，不變形 */
+  z-index: -1; /* 確保它在 header 和 main 的後面 */
 }
 
 /* Header 樣式 */
@@ -272,5 +273,6 @@ footer {
   text-align: center;
   margin: 0 auto;
 }
+
 
 
