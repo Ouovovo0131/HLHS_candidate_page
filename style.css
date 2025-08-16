@@ -116,7 +116,6 @@ body {
   padding: 2.5rem 1rem 1rem; /* 預留空間給標題 */
   border: 1px solid #ddd;
   border-radius: 4px;
-  text-align: center; /* 內文預設置中 */
 }
 
 /* 左上角的標題 */
@@ -128,6 +127,7 @@ body {
   font-size: 1.1rem;
   font-weight: bold;
   color: #1a5276;
+  text-align: left;
 }
 
 /* 中間的內文 */
@@ -300,6 +300,7 @@ footer {
   margin: 0 auto;
 
 }
+
 
 
 
