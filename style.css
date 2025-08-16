@@ -134,6 +134,7 @@ body {
 .news-text {
   font-size: 1rem;
   margin: 0;
+  text-align: center;
 }
 
 /* 暫無消息的清單項目小框 */
@@ -300,6 +301,7 @@ footer {
   margin: 0 auto;
 
 }
+
 
 
 
