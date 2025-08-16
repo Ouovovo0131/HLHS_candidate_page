@@ -110,6 +110,32 @@ body {
   padding: 0;
 }
 
+.news-item {
+  position: relative;
+  background-color: white;
+  padding: 2.5rem 1rem 1rem; /* 預留空間給標題 */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center; /* 內文預設置中 */
+}
+
+/* 左上角的標題 */
+.news-title {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #1a5276;
+}
+
+/* 中間的內文 */
+.news-text {
+  font-size: 1rem;
+  margin: 0;
+}
+
 /* 暫無消息的清單項目小框 */
 .news-item {
   background-color: white; /* 內部小框為白色 */
@@ -274,5 +300,6 @@ footer {
   margin: 0 auto;
 
 }
+
 
 
