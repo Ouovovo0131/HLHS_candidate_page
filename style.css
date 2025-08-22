@@ -6,7 +6,7 @@
 }
 
 .top-layer {
-  background-image: url("images/HLHS_2.jpg");  /* 改成你的圖片路徑 */
+  background-image: url("images/HLHS_2.jpg");
   background-size: 100% auto;
   background-position: center;
   background-repeat: no-repeat;
@@ -39,6 +39,10 @@ header h1 {
 }
 
 /* 桌面版導覽列樣式 */
+.desktop-nav {
+  display: block; /* 預設在桌面版顯示 */
+}
+
 .desktop-nav ul {
   list-style: none;
   display: flex;
@@ -500,23 +504,21 @@ footer {
 
   /* 導覽列和頁首 */
   header {
-    flex-direction: column;
+    flex-direction: row; /* 在小螢幕上調整為水平排列 */
     text-align: center;
     padding: 1rem;
+    align-items: center;
+    justify-content: space-between;
   }
-  
+
   header h1 {
     font-size: 1.2rem;
-    margin-bottom: 1rem;
+    margin: 0;
   }
   
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  nav a {
-    font-size: 0.9rem;
+  .mobile-nav.open {
+    display: block;
+    top: 60px; /* Adjust based on your header height */
   }
 
   /* 關於我們頁面 */
@@ -534,14 +536,14 @@ footer {
   
   /* 團隊成員區塊 */
   .team-member.leader {
-    flex-direction: column;
+    flex: 1 1 90%;
     margin: 0.5rem auto;
-    width: 80%;
+    width: 90%;
   }
-  
+
   .team-member.leader-solo {
     margin: 0.5rem auto;
-    width: 80%;
+    width: 90%;
   }
 
   /* 最新消息區塊 */
@@ -565,7 +567,7 @@ footer {
     flex-direction: column;
     text-align: center;
   }
-
+  
   /* 聯絡我們頁面 */
   .contact-info,
   .contact-form-section {
