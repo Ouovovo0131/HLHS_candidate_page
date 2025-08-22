@@ -21,8 +21,8 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0rem 1rem;
-  position: relative; /* 新增：為漢堡選單的定位做準備 */
-  z-index: 1000; /* 新增：確保 Header 內容顯示在最上層 */
+  position: relative; /* 為漢堡選單的定位做準備 */
+  z-index: 1000; /* 確保 Header 內容顯示在最上層 */
 }
 
 header h1 {
@@ -60,7 +60,7 @@ header h1 {
   text-decoration: underline;
 }
 
-/* 漢堡選單樣式 (新) */
+/* 漢堡選單樣式 */
 .hamburger {
   display: none; /* 預設在桌面版隱藏 */
   background: none;
@@ -70,7 +70,7 @@ header h1 {
   cursor: pointer;
 }
 
-/* 行動版導覽列樣式 (新) */
+/* 行動版導覽列樣式 */
 .mobile-nav {
   display: none; /* 預設在桌面版隱藏 */
   position: absolute;
@@ -297,6 +297,7 @@ footer {
   justify-content: center;
   gap: 2rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap; /* 讓團隊成員在小螢幕上換行 */
 }
 
 /* 讓所有雙排的成員外框變寬 */
@@ -460,12 +461,21 @@ footer {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   flex: 1 1 200px;
   max-width: 250px;
+  display: flex; /* 使內容垂直置中 */
+  flex-direction: column; /* 使內容垂直排列 */
+  justify-content: center; /* 垂直置中 */
+  min-height: 120px; /* 設定最小高度以維持一致 */
 }
 
 .contact-item h3 {
   font-size: 1.3rem;
   color: #333;
   margin-bottom: 0.8rem;
+  text-align: center; /* 讓標題置中 */
+}
+
+.contact-item p {
+  text-align: center; /* 讓內容置中 */
 }
 
 .contact-item a {
@@ -483,6 +493,7 @@ footer {
   font-size: 0.9rem;
   color: #888;
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .contact-form-section iframe {
@@ -497,7 +508,7 @@ footer {
   .desktop-nav {
     display: none;
   }
-  
+
   .hamburger {
     display: block;
   }
@@ -515,7 +526,7 @@ footer {
     font-size: 1.2rem;
     margin: 0;
   }
-  
+
   .mobile-nav.open {
     display: block;
     top: 60px; /* Adjust based on your header height */
@@ -529,11 +540,11 @@ footer {
   .about-hero h1 {
     font-size: 2rem;
   }
-  
+
   .mission-content {
     flex-direction: column;
   }
-  
+
   /* 團隊成員區塊 */
   .team-member.leader {
     flex: 1 1 90%;
@@ -557,7 +568,7 @@ footer {
     align-items: center;
     text-align: center;
   }
-  
+
   .footer-section {
     margin: 1rem 0;
   }
@@ -567,10 +578,21 @@ footer {
     flex-direction: column;
     text-align: center;
   }
-  
+
   /* 聯絡我們頁面 */
   .contact-info,
   .contact-form-section {
     padding: 1.5rem;
+  }
+
+  .contact-details {
+    flex-direction: column; /* 在小螢幕上垂直排列聯絡資訊 */
+    align-items: center; /* 讓聯絡資訊置中 */
+  }
+
+  .contact-item {
+    width: 80%; /* 讓聯絡資訊項目在小螢幕上佔據較多寬度 */
+    margin-bottom: 1rem; /* 增加項目之間的間距 */
+    min-height: auto; /* 移除最小高度限制 */
   }
 }
