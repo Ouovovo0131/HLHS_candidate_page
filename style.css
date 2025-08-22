@@ -6,7 +6,7 @@
 }
 
 .top-layer {
-  background-image: url("./images/HLHS_2.jpg");  /* 改成你的圖片路徑 */
+  background-image: url("/images/HLHS_2.jpg");  /* 改成你的圖片路徑 */
   background-size: 100% auto;
   background-position: center;
   background-repeat: no-repeat;
@@ -21,6 +21,8 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0rem 1rem;
+  position: relative; /* Add this for correct positioning of mobile nav */
+  z-index: 1000; /* Ensure header content is above other elements */
 }
 
 header h1 {
@@ -36,7 +38,8 @@ header h1 {
   margin-right: 10px;
 }
 
-nav ul {
+/* Desktop navigation styles */
+.desktop-nav ul {
   list-style: none;
   display: flex;
   gap: 1rem;
@@ -44,13 +47,65 @@ nav ul {
   padding: 0;
 }
 
-nav a {
+.desktop-nav a {
   color: white;
   text-decoration: none;
 }
 
-nav a:hover {
+.desktop-nav a:hover {
   text-decoration: underline;
+}
+
+/* Hamburger icon styles */
+.hamburger {
+  display: none; /* Hidden by default, shown on mobile */
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1001; /* Ensure hamburger is on top */
+}
+
+/* Mobile navigation drawer styles */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Initially hidden off-screen */
+  width: 250px;
+  height: 100%;
+  background-color: #1a5276; /* Dark blue background */
+  color: white;
+  padding-top: 60px; /* Space for header if needed */
+  transition: right 0.3s ease-in-out;
+  z-index: 999; /* Below hamburger but above other content */
+  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+}
+
+.mobile-nav.open {
+  right: 0; /* Slide in when 'open' class is added */
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.mobile-nav a:hover {
+  background-color: #2b709b; /* Lighter blue on hover */
 }
 
 /* 全站通用樣式 */
@@ -66,15 +121,13 @@ body {
   justify-content: center;
   align-items: center;
   height: 20rem;
-  padding: 2rem1 1rem;
+  padding: 2rem 1rem;
   margin-bottom: 1.5rem;
   text-align: center; /* 文字置中 */
   font-size: 2rem; /* 可自行調整 */
 }
 
 /* ------------首頁部分------------ */
-
-
 #news-container {
   background-color: white; /* 底圖為白色 */
   padding: 0; /* 移除 padding */
@@ -110,41 +163,33 @@ body {
   padding: 0;
 }
 
-.news-item {
-  position: relative;
-  background-color: white;
-  padding: 2.5rem 1rem 1rem; /* 預留空間給標題 */
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-/* 左上角的標題 */
-.news-title {
-  position: absolute;
-  top: 10px;
-  left: 15px;
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #1a5276;
-  text-align: left;
-  align-self: center;
-}
-
-/* 中間的內文 */
-.news-text {
-  font-size: 1rem;
-  margin: 0;
-  text-align: center;
-}
-
-/* 暫無消息的清單項目小框 */
+/* 修正 news-item 樣式 */
 .news-item {
   background-color: white; /* 內部小框為白色 */
   padding: 1rem;
   border: 1px solid #ddd; /* 增加灰色邊框 */
   border-radius: 4px;
-  text-align: center;
+  display: flex; /* 使用 Flexbox */
+  flex-direction: column; /* 垂直排列 */
+  align-items: center; /* 讓 news-title 和 news-text 都置中 */
+  position: relative; /* 設定為相對定位，讓 news-title 絕對定位於此 */
+}
+
+/* 修正 news-title 樣式 */
+.news-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #1a5276;
+  text-align: center; /* 讓標題置中 */
+  margin-bottom: 0.5rem; /* 增加與內文的間距 */
+}
+
+/* 修正 news-text 樣式 */
+.news-text {
+  font-size: 1rem;
+  margin: 0;
+  text-align: center; /* 讓內文置中 */
 }
 
 /* Footer 樣式 */
@@ -198,15 +243,12 @@ footer {
 
 
 /* ------------關於我們部分------------ */
-
-/* 關於我們頁面主體樣式 */
 .about-page {
-  max-width: 1200px; /* 限制頁面內容最大寬度 */
+  max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-/* 關於我們介紹區塊 */
 .about-hero {
   text-align: center;
   background-color: #f8f9fa;
@@ -221,7 +263,6 @@ footer {
   color: #1a5276;
 }
 
-/* 使命與願景區塊 */
 .mission {
   margin-bottom: 2rem;
 }
@@ -240,14 +281,13 @@ footer {
 }
 
 .mission-item {
-  flex: 1 1 300px; /* 讓每個項目佔據一定寬度，並在小螢幕上換行 */
+  flex: 1 1 300px;
   background-color: #e9ecef;
   padding: 2rem;
   border-radius: 8px;
   text-align: center;
 }
 
-/* 組織架構區塊 */
 .organization {
   text-align: center;
   margin-bottom: 2rem;
@@ -260,7 +300,6 @@ footer {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 團隊成員介紹區塊，維持原樣 */
 .team {
   margin-bottom: 2rem;
 }
@@ -271,40 +310,209 @@ footer {
   color: #1a5276;
 }
 
-/* 新增：每個橫列的 Flexbox 容器 */
 .team-row {
   display: flex;
-  justify-content: center; /* 水平置中 */
+  justify-content: center;
   gap: 2rem;
-  margin-bottom: 2rem; /* 讓每個橫列之間有間距 */
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
-/* 讓所有雙排的成員外框變寬 */
 .team-member.leader {
-  flex: 1 1 calc(50% - 2rem); /* 各佔據一行的一半 */
-  max-width: 400px; /* 設定最大寬度，避免在超大螢幕上過寬 */
+  flex: 1 1 calc(50% - 2rem);
+  max-width: 400px;
   background-color: #f8f9fa;
-  padding: 2rem; /* 增加內邊距，讓框看起來更大 */
+  padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-/* 單獨排版的機動組 */
 .team-member.leader-solo {
-  width: 100%; /* 佔據整行寬度 */
-  max-width: 400px; /* 設定最大寬度，與其他成員一致 */
+  width: 100%;
+  max-width: 400px;
   background-color: #f8f9fa;
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   margin: 0 auto;
-
 }
 
+/*------------ 新增的活動資訊頁面樣式 ------------*/
+.event-page {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
 
+.event-section {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
 
+.event-section h2 {
+  color: #1a5276;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+}
 
+.event-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
 
+.event-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.event-info {
+  text-align: center;
+}
+
+.event-info h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.related-events {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.related-events h2 {
+  font-size: 2rem;
+  color: #1a5276;
+  margin-bottom: 1.5rem;
+}
+
+.event-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.related-event-item {
+  background-color: #e9ecef;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  flex: 1 1 250px;
+  max-width: 350px;
+}
+
+/* ------------ 響應式設計：針對小螢幕 (小於 768px) ------------*/
+@media (max-width: 768px) {
+  header {
+    flex-direction: row; /* Keep logo and hamburger on one row */
+    align-items: center;
+    justify-content: space-between; /* Space out logo and hamburger */
+  }
+  
+  header h1 {
+    font-size: 1.2rem;
+    margin-bottom: 0; /* No bottom margin on mobile header */
+    text-align: left; /* Keep title left-aligned */
+  }
+
+  /* Hide desktop nav on mobile */
+  .desktop-nav {
+    display: none;
+  }
+
+  /* Show hamburger icon on mobile */
+  .hamburger {
+    display: block;
+  }
+
+  .top-layer {
+    height: 20rem;
+    background-size: cover;
+  }
+
+  .welcome {
+    font-size: 1.5rem;
+    height: 15rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    width: 100%;
+    margin: 1rem 0;
+    text-align: center;
+  }
+  
+  .about-hero h1, .mission h2, .organization h2, .team h2 {
+    font-size: 2rem;
+  }
+
+  .event-details {
+    flex-direction: column;
+  }
+
+  .event-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .event-item {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* 為了避免 .event-item 與 news-item 混淆，將 .event-item 的樣式獨立出來 */
+/* 避免在首頁影響到最新消息 */
+.events-list .event-item {
+  display: flex;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  align-items: center;
+  gap: 1.5rem;
+}
+.event-date {
+  background-color: #1a5276;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  min-width: 80px;
+}
+
+.event-date .month {
+  display: block;
+  font-size: 1.2rem;
+}
+
+.event-date .day {
+  display: block;
+  font-size: 1.8rem;
+}
+
+.event-details h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.event-details p {
+  color: #555;
+  margin: 0;
+}
