@@ -6,7 +6,7 @@
 }
 
 .top-layer {
-  background-image: url("./images/HLHS_2.jpg");  /* 改成你的圖片路徑 */
+  background-image: url("images/HLHS_2.jpg");  /* 改成你的圖片路徑 */
   background-size: 100% auto;
   background-position: center;
   background-repeat: no-repeat;
@@ -473,6 +473,11 @@ footer {
     flex-direction: column;
     text-align: center;
   }
+
+  .contact-info,
+  .contact-form-section {
+    padding: 1.5rem;
+  }
 }
 
 /* 為了避免 .event-item 與 news-item 混淆，將 .event-item 的樣式獨立出來 */
@@ -517,7 +522,118 @@ footer {
   margin: 0;
 }
 
+/*------------ 新增的聯絡我們頁面樣式 ------------*/
+.contact-page {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
 
+.contact-info,
+.contact-form-section {
+  background-color: #f8f9fa;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  text-align: center;
+}
 
+.contact-info h2,
+.contact-form-section h2 {
+  color: #1a5276;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
 
+.contact-info p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
 
+.contact-details {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.contact-item {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  flex: 1 1 200px;
+  max-width: 250px;
+}
+
+.contact-item h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 0.8rem;
+}
+
+.contact-item a {
+  color: #1a5276;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+/* 聯絡表單樣式 */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.form-instruction {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: -1rem; /* 向上微調 */
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #1a5276;
+  color: white;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #164260;
+}
