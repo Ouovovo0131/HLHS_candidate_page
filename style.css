@@ -12,7 +12,7 @@
   background-repeat: no-repeat;
   padding: 1rem 1rem;
   height: 25rem;
-  color: white; /* 文字白色，確保可讀 */
+  color: white;
 }
 
 /* Header 樣式 */
@@ -21,8 +21,8 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0rem 1rem;
-  position: relative; /* Add this for correct positioning of mobile nav */
-  z-index: 1000; /* Ensure header content is above other elements */
+  position: relative; /* 新增：為漢堡選單的定位做準備 */
+  z-index: 1000; /* 新增：確保 Header 內容顯示在最上層 */
 }
 
 header h1 {
@@ -38,7 +38,7 @@ header h1 {
   margin-right: 10px;
 }
 
-/* Desktop navigation styles */
+/* 桌面版導覽列樣式 */
 .desktop-nav ul {
   list-style: none;
   display: flex;
@@ -56,56 +56,47 @@ header h1 {
   text-decoration: underline;
 }
 
-/* Hamburger icon styles */
+/* 漢堡選單樣式 (新) */
 .hamburger {
-  display: none; /* Hidden by default, shown on mobile */
+  display: none; /* 預設在桌面版隱藏 */
   background: none;
   border: none;
-  font-size: 1.8rem;
   color: white;
+  font-size: 1.5rem;
   cursor: pointer;
-  z-index: 1001; /* Ensure hamburger is on top */
 }
 
-/* Mobile navigation drawer styles */
+/* 行動版導覽列樣式 (新) */
 .mobile-nav {
-  position: fixed;
-  top: 0;
-  right: -250px; /* Initially hidden off-screen */
-  width: 250px;
-  height: 100%;
-  background-color: #1a5276; /* Dark blue background */
-  color: white;
-  padding-top: 60px; /* Space for header if needed */
-  transition: right 0.3s ease-in-out;
-  z-index: 999; /* Below hamburger but above other content */
-  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  display: none; /* 預設在桌面版隱藏 */
+  position: absolute;
+  top: 100%; /* 顯示在 Header 下方 */
+  left: 0;
+  width: 100%;
+  background-color: #1a5276;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-nav.open {
-  right: 0; /* Slide in when 'open' class is added */
+  display: block; /* 點擊後顯示 */
 }
 
 .mobile-nav ul {
   list-style: none;
-  padding: 0;
+  padding: 1rem 0;
   margin: 0;
 }
 
-.mobile-nav li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.mobile-nav a {
+.mobile-nav li a {
   display: block;
-  padding: 15px 20px;
+  padding: 0.8rem 1rem;
   color: white;
   text-decoration: none;
-  font-size: 1.1rem;
 }
 
-.mobile-nav a:hover {
-  background-color: #2b709b; /* Lighter blue on hover */
+.mobile-nav li a:hover {
+  background-color: #154563;
 }
 
 /* 全站通用樣式 */
@@ -123,23 +114,28 @@ body {
   height: 20rem;
   padding: 2rem 1rem;
   margin-bottom: 1.5rem;
-  text-align: center; /* 文字置中 */
-  font-size: 2rem; /* 可自行調整 */
+  text-align: center;
+  font-size: 2rem;
 }
 
 /* ------------首頁部分------------ */
+.news-wrapper {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
 #news-container {
-  background-color: white; /* 底圖為白色 */
-  padding: 0; /* 移除 padding */
-  margin: 2rem auto; /* 水平置中，與上方區塊保持距離 */
-  width: 90%; /* 寬度可以自行調整 */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 增加陰影效果 */
-  border-radius: 8px; /* 增加一點圓角讓視覺更柔和 */
+  background-color: white;
+  padding: 0;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 /* 最新消息標題的色塊 */
 .news-header {
-  background-color: #1a5276; /* 深藍色 */
+  background-color: #1a5276;
   color: white;
   padding: 1.5rem;
   text-align: center;
@@ -152,58 +148,38 @@ body {
 
 /* 內容區塊的淡色底圖 */
 .news-content {
-  background-color: #f4f4f4; /* 淺灰色底圖 */
+  background-color: #f4f4f4;
   padding: 1.5rem;
-  border-radius: 8px; /* 這裡也可以加上圓角 */
+  border-radius: 8px;
 }
 
 .news-content ul {
-  list-style: none; /* 移除清單項目符號 */
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* 修正 news-item 樣式 */
+/* 暫無消息的清單項目小框 */
 .news-item {
-  background-color: white; /* 內部小框為白色 */
+  background-color: white;
   padding: 1rem;
-  border: 1px solid #ddd; /* 增加灰色邊框 */
+  border: 1px solid #ddd;
   border-radius: 4px;
-  display: flex; /* 使用 Flexbox */
-  flex-direction: column; /* 垂直排列 */
-  align-items: center; /* 讓 news-title 和 news-text 都置中 */
-  position: relative; /* 設定為相對定位，讓 news-title 絕對定位於此 */
-}
-
-/* 修正 news-title 樣式 */
-.news-title {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #1a5276;
-  text-align: center; /* 讓標題置中 */
-  margin-bottom: 0.5rem; /* 增加與內文的間距 */
-}
-
-/* 修正 news-text 樣式 */
-.news-text {
-  font-size: 1rem;
-  margin: 0;
-  text-align: center; /* 讓內文置中 */
+  text-align: center;
 }
 
 /* Footer 樣式 */
 footer {
-  background-color: #333; /* 頁腳背景色 */
-  color: white; /* 文字顏色 */
+  background-color: #333;
+  color: white;
   padding: 2rem 1rem;
   font-size: 0.9rem;
 }
 
 .footer-container {
   display: flex;
-  justify-content: space-around; /* 讓內容區塊之間有平均的間距 */
-  flex-wrap: wrap; /* 讓區塊在小螢幕上可以換行 */
+  justify-content: space-around;
+  flex-wrap: wrap;
   margin-bottom: 1.5rem;
 }
 
@@ -214,7 +190,7 @@ footer {
 .footer-section h3 {
   font-size: 1.2rem;
   margin-bottom: 0.8rem;
-  border-bottom: 2px solid white; /* 在標題下方增加一條線 */
+  border-bottom: 2px solid white;
   padding-bottom: 0.5rem;
 }
 
@@ -227,20 +203,19 @@ footer {
 .footer-section a {
   color: white;
   text-decoration: none;
-  line-height: 1.8; /* 增加行高，讓連結看起來更舒適 */
+  line-height: 1.8;
 }
 
 .footer-section a:hover {
-  text-decoration: underline; /* 懸停時增加底線 */
+  text-decoration: underline;
 }
 
 .copyright {
   text-align: center;
-  border-top: 1px solid #555; /* 在版權資訊上方增加一條分隔線 */
+  border-top: 1px solid #555;
   padding-top: 1rem;
   margin-top: 1rem;
 }
-
 
 /* ------------關於我們部分------------ */
 .about-page {
@@ -288,6 +263,7 @@ footer {
   text-align: center;
 }
 
+/* 組織架構區塊 */
 .organization {
   text-align: center;
   margin-bottom: 2rem;
@@ -300,6 +276,7 @@ footer {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* 團隊成員介紹區塊 */
 .team {
   margin-bottom: 2rem;
 }
@@ -310,16 +287,17 @@ footer {
   color: #1a5276;
 }
 
+/* 讓每個橫列的 Flexbox 容器 */
 .team-row {
   display: flex;
   justify-content: center;
   gap: 2rem;
   margin-bottom: 2rem;
-  flex-wrap: wrap;
 }
 
+/* 讓所有雙排的成員外框變寬 */
 .team-member.leader {
-  flex: 1 1 calc(50% - 2rem);
+  flex: 1 1 250px;
   max-width: 400px;
   background-color: #f8f9fa;
   padding: 2rem;
@@ -328,6 +306,7 @@ footer {
   text-align: center;
 }
 
+/* 單獨排版的機動組 */
 .team-member.leader-solo {
   width: 100%;
   max-width: 400px;
@@ -339,150 +318,31 @@ footer {
   margin: 0 auto;
 }
 
-/*------------ 新增的活動資訊頁面樣式 ------------*/
+/* ------------ 活動資訊頁面樣式 ------------*/
 .event-page {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-.event-section {
-  background-color: #f8f9fa;
-  padding: 2rem;
-  border-radius: 8px;
+.events-outline {
   margin-bottom: 2rem;
 }
 
-.event-section h2 {
+.events-outline h2 {
   color: #1a5276;
   text-align: center;
   margin-bottom: 1.5rem;
   font-size: 2.2rem;
 }
 
-.event-details {
+.events-list {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  align-items: center;
 }
 
-.event-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.event-info {
-  text-align: center;
-}
-
-.event-info h3 {
-  font-size: 1.8rem;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-
-.related-events {
-  margin-top: 3rem;
-  text-align: center;
-}
-
-.related-events h2 {
-  font-size: 2rem;
-  color: #1a5276;
-  margin-bottom: 1.5rem;
-}
-
-.event-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.related-event-item {
-  background-color: #e9ecef;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  flex: 1 1 250px;
-  max-width: 350px;
-}
-
-/* ------------ 響應式設計：針對小螢幕 (小於 768px) ------------*/
-@media (max-width: 768px) {
-  header {
-    flex-direction: row; /* Keep logo and hamburger on one row */
-    align-items: center;
-    justify-content: space-between; /* Space out logo and hamburger */
-  }
-  
-  header h1 {
-    font-size: 1.2rem;
-    margin-bottom: 0; /* No bottom margin on mobile header */
-    text-align: left; /* Keep title left-aligned */
-  }
-
-  /* Hide desktop nav on mobile */
-  .desktop-nav {
-    display: none;
-  }
-
-  /* Show hamburger icon on mobile */
-  .hamburger {
-    display: block;
-  }
-
-  .top-layer {
-    height: 20rem;
-    background-size: cover;
-  }
-
-  .welcome {
-    font-size: 1.5rem;
-    height: 15rem;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-section {
-    width: 100%;
-    margin: 1rem 0;
-    text-align: center;
-  }
-  
-  .about-hero h1, .mission h2, .organization h2, .team h2 {
-    font-size: 2rem;
-  }
-
-  .event-details {
-    flex-direction: column;
-  }
-
-  .event-info h3 {
-    font-size: 1.5rem;
-  }
-
-  .event-item {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .contact-info,
-  .contact-form-section {
-    padding: 1.5rem;
-  }
-}
-
-/* 為了避免 .event-item 與 news-item 混淆，將 .event-item 的樣式獨立出來 */
-/* 避免在首頁影響到最新消息 */
-.events-list .event-item {
+.event-item {
   display: flex;
   background-color: #f8f9fa;
   border-radius: 8px;
@@ -491,6 +351,7 @@ footer {
   align-items: center;
   gap: 1.5rem;
 }
+
 .event-date {
   background-color: #1a5276;
   color: white;
@@ -522,7 +383,36 @@ footer {
   margin: 0;
 }
 
-/*------------ 新增的聯絡我們頁面樣式 ------------*/
+/* 相關活動區塊 */
+.related-events {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.related-events h2 {
+  font-size: 2rem;
+  color: #1a5276;
+  margin-bottom: 1.5rem;
+}
+
+.event-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.related-event-item {
+  background-color: #e9ecef;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  flex: 1 1 250px;
+  max-width: 350px;
+}
+
+/* ------------ 聯絡我們頁面樣式 ------------*/
 .contact-page {
   max-width: 900px;
   margin: 2rem auto;
@@ -584,56 +474,101 @@ footer {
   text-decoration: underline;
 }
 
-/* 聯絡表單樣式 */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  text-align: left;
-}
-
+/* 表單樣式 */
 .form-instruction {
   font-size: 0.9rem;
   color: #888;
-  margin-top: -1rem; /* 向上微調 */
-  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group label {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  color: #333;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 0.8rem;
+.contact-form-section iframe {
   border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.form-group textarea {
-  resize: vertical;
-}
+/*------------ 響應式設計：針對小螢幕 (小於 768px) ------------*/
+@media (max-width: 768px) {
+  /* 隱藏桌面版導覽列，顯示漢堡選單 */
+  .desktop-nav {
+    display: none;
+  }
+  
+  .hamburger {
+    display: block;
+  }
 
-.contact-form button {
-  background-color: #1a5276;
-  color: white;
-  padding: 1rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+  /* 導覽列和頁首 */
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  header h1 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  nav a {
+    font-size: 0.9rem;
+  }
 
-.contact-form button:hover {
-  background-color: #164260;
+  /* 關於我們頁面 */
+  .about-hero {
+    padding: 2rem 1rem;
+  }
+
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .mission-content {
+    flex-direction: column;
+  }
+  
+  /* 團隊成員區塊 */
+  .team-member.leader {
+    flex-direction: column;
+    margin: 0.5rem auto;
+    width: 80%;
+  }
+  
+  .team-member.leader-solo {
+    margin: 0.5rem auto;
+    width: 80%;
+  }
+
+  /* 最新消息區塊 */
+  .news-wrapper {
+    width: 95%;
+  }
+
+  /* 頁腳 */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-section {
+    margin: 1rem 0;
+  }
+
+  /* 活動資訊頁面 */
+  .event-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* 聯絡我們頁面 */
+  .contact-info,
+  .contact-form-section {
+    padding: 1.5rem;
+  }
 }
