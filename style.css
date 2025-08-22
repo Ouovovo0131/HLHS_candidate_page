@@ -126,15 +126,16 @@ body {
 .news-wrapper {
   max-width: 1200px;
   margin: 2rem auto;
-  padding: 0 1rem;
+  padding: 0; /* 移除 padding 讓內部內容可以佔滿寬度 */
 }
 
 #news-container {
   background-color: white;
   padding: 0;
-  width: 90%;
+  width: 100%; /* 讓內容框佔滿 news-wrapper 的寬度 */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  margin: 0 auto; /* 水平置中 */
 }
 
 /* 最新消息標題的色塊 */
@@ -143,7 +144,9 @@ body {
   color: white;
   padding: 1.5rem;
   text-align: center;
-  margin: 0 auto;
+  margin: 0 auto 1.5rem auto; /* 調整下邊距 */
+  width: 100%; /* 讓藍色矩形佔滿 news-wrapper 的寬度 */
+  max-width: 1200px; /* 限制最大寬度，與 news-wrapper 一致 */
 }
 
 .news-header h2 {
@@ -178,6 +181,7 @@ footer {
   color: white;
   padding: 2rem 1rem;
   font-size: 0.9rem;
+  width: 100%; /* 確保頁腳佔據 100% 寬度 */
 }
 
 .footer-container {
@@ -564,6 +568,7 @@ footer {
   
   #news-container {
     width: 100%; /* 讓最新消息內容在小螢幕上佔滿寬度 */
+    /* margin: 0 auto; 已在桌面版定義，不再重複 */
   }
 
   /* 頁腳 */
