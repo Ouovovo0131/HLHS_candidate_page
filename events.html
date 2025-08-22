@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>花中班聯會官方網站</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome for hamburger icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="top-layer">
+        <header>
+        <h1>
+            <img src="/images/Logo_HLHS.png" alt="花中班聯會 Logo" class="logo" />
+            花中班聯會官方網站
+        </h1>
+        <!-- Hamburger icon for mobile navigation -->
+        <button class="hamburger" id="hamburger-events">
+            <i class="fas fa-bars"></i>
+        </button>
+        <!-- Mobile navigation drawer -->
+        <nav class="mobile-nav" id="mobile-nav-events">
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="events.html">活動資訊</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
+            </ul>
+        </nav>
+        <!-- Desktop navigation -->
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="events.html">活動資訊</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
+            </ul>
+        </nav>
+        </header>
+
+        <main>
+            <section id="welcome" class="welcome">
+            <h2>歡迎來到花中班聯會</h2>
+            </section>
+        </main>
+    </div>
+    
+    <main class="event-page">
+      <section class="events-outline">
+        <h2>活動資訊大綱</h2>
+        <div class="events-list">
+          <div class="event-item">
+            <div class="event-date">
+              <span class="month">8月</span>
+              <span class="day">26、27</span>
+            </div>
+            <div class="event-details">
+              <h3>高一新生訓練</h3>
+              <p>
+                透過一系列歡迎、介紹校園資源、課外活動與安全須知，協助新生快速適應高中環境並開啟充實的學習旅程。
+              </p>
+            </div>
+          </div>
+          
+          <div class="event-item">
+            <div class="event-date">
+              <span class="month">9月</span>
+              <span class="day">待定</span>
+            </div>
+            <div class="event-details">
+              <h3>社團幹部訓練</h3>
+              <p>
+                說明社團基礎運作介紹、幹部職責與領導技巧，提升社團幹部的管理與組織能力，促進社團發展。
+              </p>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <div class="event-date">
+              <span class="month">9月</span>
+              <span class="day">待定</span>
+            </div>
+            <div class="event-details">
+              <h3>敬師迎新</h3>
+              <p>
+                表達對教師的敬意，並歡迎新生的加入，以促進師生間的良好互動與關係建立。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>相關網站</h3>
+          <ul>
+            <li><a href="https://www.hlhs.hlc.edu.tw/" target="_blank">花蓮高中官方網站</a></li>
+            <li><a href="https://www.instagram.com/hlhssc/" target="_blank">花中班聯會 Instagram</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>聯絡我們</h3>
+          <p>電子郵件：<a href="mailto:hlhssc@gmail.com">hlhssc@gmail.com</a></p>
+          <p>地址：花蓮縣花蓮市民權路42號</p>
+        </div>
+      </div>
+    </footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.getElementById('hamburger-events');
+        const mobileNav = document.getElementById('mobile-nav-events');
+
+        hamburger.addEventListener('click', function() {
+            mobileNav.classList.toggle('open');
+            hamburger.classList.toggle('is-active');
+        });
+
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('open');
+                hamburger.classList.remove('is-active');
+            });
+        });
+    });
+</script>
+</body>
+</html>
