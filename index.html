@@ -3,19 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="google-site-verification" content="Fp-sTEtzej08slfQfu9x8Bzy-Vmh2Pi2GlI6PlkcnSs" />
   <title>花中班聯會官方網站</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome for hamburger icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
     <div class="top-layer">
         <header>
         <h1>
-            <img src="images/Logo_HLHS.png" alt="花中班聯會 Logo" class="logo" />
+            <img src="/images/Logo_HLHS.png" alt="花中班聯會 Logo" class="logo" />
             花中班聯會官方網站
         </h1>
-        <nav>
+        <!-- Hamburger icon for mobile navigation -->
+        <button class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </button>
+        <!-- Mobile navigation drawer -->
+        <nav class="mobile-nav" id="mobile-nav">
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="about.html">關於我們</a></li>
+                <li><a href="events.html">活動資訊</a></li>
+                <li><a href="contact.html">聯絡我們</a></li>
+            </ul>
+        </nav>
+        <!-- Desktop navigation -->
+        <nav class="desktop-nav">
             <ul>
                 <li><a href="index.html">首頁</a></li>
                 <li><a href="about.html">關於我們</a></li>
@@ -43,7 +58,7 @@
                 <li>
                 <div class="news-item">
                   <h3 class="news-title">新生訊息</h3>
-                  <p class="news-text">8/26、8/27是新生訓練，請新生們不要遲到喔ovob</p>
+                  <p class="news-text">8/26、8/27是新生訓練，請新生們不要遲到!</p>
                 </div>
                 </li>
             </ul>
@@ -57,7 +72,7 @@
       <h3>相關網站</h3>
       <ul>
         <li><a href="https://www.hlhs.hlc.edu.tw/" target="_blank">花蓮高中官方網站</a></li>
-        <li><a href="https://www.instagram.com/hlhs_student.union?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">花中班聯會 Instagram</a></li>
+        <li><a href="https://www.instagram.com/hlhssc/" target="_blank">花中班聯會 Instagram</a></li>
       </ul>
     </div>
     <div class="footer-section">
@@ -66,12 +81,26 @@
       <p>地址：花蓮縣花蓮市民權路42號</p>
     </div>
   </div>
-  
-
 </footer>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobile-nav');
 
+        hamburger.addEventListener('click', function() {
+            mobileNav.classList.toggle('open');
+            hamburger.classList.toggle('is-active'); // For animation if desired
+        });
 
-
-
-
+        // Close nav when a link is clicked (optional)
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('open');
+                hamburger.classList.remove('is-active');
+            });
+        });
+    });
+</script>
+</body>
+</html>
