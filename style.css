@@ -559,7 +559,11 @@ footer {
 
   /* 最新消息區塊 */
   .news-wrapper {
-    width: 95%;
+    width: 95%; /* 確保在小螢幕上有適當的寬度 */
+  }
+  
+  #news-container {
+    width: 100%; /* 讓最新消息內容在小螢幕上佔滿寬度 */
   }
 
   /* 頁腳 */
