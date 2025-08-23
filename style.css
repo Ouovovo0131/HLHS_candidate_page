@@ -17,8 +17,8 @@ a {
 
 /* ------------ 頁首與導覽列 ------------ */
 .top-layer {
-  background-image: url("images/HLHS_2.jpg");
-  background-size: cover; /* 讓圖片填滿容器，不留白邊 */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("images/HLHS_2.jpg");
+  background-size: cover; /* 關鍵：讓圖片填滿容器，不留白邊 */
   background-position: center;
   background-repeat: no-repeat;
   padding: 1rem 1rem;
@@ -203,6 +203,11 @@ header h1 {
   color: #1a5276;
 }
 
+/* 新增：為 .about-hero 區塊內的 p 標籤設定文字顏色 */
+.about-hero p {
+  color: #333;
+}
+
 .mission {
   margin-bottom: 2rem;
 }
@@ -226,6 +231,11 @@ header h1 {
   padding: 2rem;
   border-radius: 8px;
   text-align: center;
+}
+
+/* 新增：為 .mission-item 區塊內的 p 標籤設定文字顏色 */
+.mission-item p {
+  color: #333;
 }
 
 .organization {
@@ -271,7 +281,7 @@ header h1 {
 /* 新增：為 .leader 區塊內的 h3 和 p 標籤設定文字顏色 */
 .team-member.leader h3,
 .team-member.leader p {
-  color: #333; /* 確保文字顏色為深灰色，易於閱讀 */
+  color: #333;
 }
 
 .team-member.leader-solo {
@@ -288,7 +298,7 @@ header h1 {
 /* 新增：為 .leader-solo 區塊內的 h3 和 p 標籤設定文字顏色 */
 .team-member.leader-solo h3,
 .team-member.leader-solo p {
-  color: #333; /* 確保文字顏色為深灰色，易於閱讀 */
+  color: #333;
 }
 
 /* ------------ 活動資訊頁面 ------------ */
@@ -623,4 +633,3 @@ footer {
     min-height: auto;
   }
 }
-
