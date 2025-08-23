@@ -5,17 +5,27 @@
   box-sizing: border-box;
 }
 
+/* ------------ 全站通用樣式 ------------ */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ------------ 頁首與導覽列 ------------ */
 .top-layer {
   background-image: url("images/HLHS_2.jpg");
-  background-size: cover; /* 關鍵：讓圖片填滿容器，不留白邊 */
+  background-size: cover; /* 讓圖片填滿容器，不留白邊 */
   background-position: center;
   background-repeat: no-repeat;
   padding: 1rem 1rem;
-  height: 25rem; /* 保持原來的固定高度 */
+  height: 25rem;
   color: white;
 }
 
-/* Header 樣式 */
 header {
   display: flex;
   align-items: center;
@@ -40,7 +50,7 @@ header h1 {
 
 /* 桌面版導覽列樣式 */
 .desktop-nav {
-  display: block; /* 預設在桌面版顯示 */
+  display: block;
 }
 
 .desktop-nav ul {
@@ -53,14 +63,12 @@ header h1 {
 
 .desktop-nav a {
   color: white;
-  text-decoration: none;
 }
 
 .desktop-nav a:hover {
   text-decoration: underline;
 }
 
-/* 新增：確保已訪問連結的顏色與未訪問連結相同 */
 .desktop-nav a:visited {
   color: white;
 }
@@ -77,9 +85,9 @@ header h1 {
 
 /* 行動版導覽列樣式 */
 .mobile-nav {
-  display: none; /* 預設在桌面版隱藏 */
+  display: none;
   position: absolute;
-  top: 100%; /* 顯示在 Header 下方 */
+  top: 100%;
   left: 0;
   width: 100%;
   background-color: #1a5276;
@@ -88,7 +96,7 @@ header h1 {
 }
 
 .mobile-nav.open {
-  display: block; /* 點擊後顯示 */
+  display: block;
 }
 
 .mobile-nav ul {
@@ -101,22 +109,14 @@ header h1 {
   display: block;
   padding: 0.8rem 1rem;
   color: white;
-  text-decoration: none;
 }
 
 .mobile-nav li a:hover {
   background-color: #154563;
 }
 
-/* 新增：確保已訪問連結的顏色與未訪問連結相同 */
 .mobile-nav li a:visited {
   color: white;
-}
-
-/* 全站通用樣式 */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
 }
 
 /* welcome 區塊 */
@@ -132,38 +132,36 @@ body {
   font-size: 2rem;
 }
 
-/* ------------首頁部分------------ */
+/* ------------ 首頁 ------------ */
 .news-wrapper {
   max-width: 1200px;
   margin: 2rem auto;
-  padding: 0; /* 移除 padding 讓內部內容可以佔滿寬度 */
+  padding: 0;
 }
 
 #news-container {
   background-color: white;
   padding: 0;
-  width: 100%; /* 讓內容框佔滿 news-wrapper 的寬度 */
+  width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  margin: 0 auto; /* 水平置中 */
+  margin: 0 auto;
 }
 
-/* 最新消息標題的色塊 */
 .news-header {
   background-color: #1a5276;
   color: white;
   padding: 1.5rem;
   text-align: center;
-  margin: 0 auto 1.5rem auto; /* 調整下邊距 */
-  width: 100%; /* 讓藍色矩形佔滿 news-wrapper 的寬度 */
-  max-width: 1200px; /* 限制最大寬度，與 news-wrapper 一致 */
+  margin: 0 auto 1.5rem auto;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .news-header h2 {
   font-size: 2.2rem;
 }
 
-/* 內容區塊的淡色底圖 */
 .news-content {
   background-color: #f4f4f4;
   padding: 1.5rem;
@@ -176,7 +174,6 @@ body {
   padding: 0;
 }
 
-/* 暫無消息的清單項目小框 */
 .news-item {
   background-color: white;
   padding: 1rem;
@@ -185,57 +182,7 @@ body {
   text-align: center;
 }
 
-/* Footer 樣式 */
-footer {
-  background-color: #333;
-  color: white;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-  width: 100%; /* 確保頁腳佔據 100% 寬度 */
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-bottom: 1.5rem;
-}
-
-.footer-section {
-  margin: 1rem;
-}
-
-.footer-section h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.8rem;
-  border-bottom: 2px solid white;
-  padding-bottom: 0.5rem;
-}
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-section a {
-  color: white;
-  text-decoration: none;
-  line-height: 1.8;
-}
-
-.footer-section a:hover {
-  text-decoration: underline;
-}
-
-.copyright {
-  text-align: center;
-  border-top: 1px solid #555;
-  padding-top: 1rem;
-  margin-top: 1rem;
-}
-
-/* ------------關於我們部分------------ */
+/* ------------ 關於我們 ------------ */
 .about-page {
   max-width: 1200px;
   margin: 2rem auto;
@@ -281,7 +228,6 @@ footer {
   text-align: center;
 }
 
-/* 組織架構區塊 */
 .organization {
   text-align: center;
   margin-bottom: 2rem;
@@ -294,7 +240,6 @@ footer {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 團隊成員介紹區塊 */
 .team {
   margin-bottom: 2rem;
 }
@@ -305,16 +250,14 @@ footer {
   color: #1a5276;
 }
 
-/* 讓每個橫列的 Flexbox 容器 */
 .team-row {
   display: flex;
   justify-content: center;
   gap: 2rem;
   margin-bottom: 2rem;
-  flex-wrap: wrap; /* 讓團隊成員在小螢幕上換行 */
+  flex-wrap: wrap;
 }
 
-/* 讓所有雙排的成員外框變寬 */
 .team-member.leader {
   flex: 1 1 250px;
   max-width: 400px;
@@ -325,7 +268,6 @@ footer {
   text-align: center;
 }
 
-/* 單獨排版的機動組 */
 .team-member.leader-solo {
   width: 100%;
   max-width: 400px;
@@ -337,7 +279,7 @@ footer {
   margin: 0 auto;
 }
 
-/* ------------ 活動資訊頁面樣式 ------------*/
+/* ------------ 活動資訊頁面 ------------ */
 .event-page {
   max-width: 1200px;
   margin: 2rem auto;
@@ -431,7 +373,7 @@ footer {
   max-width: 350px;
 }
 
-/* ------------ 聯絡我們頁面樣式 ------------*/
+/* ------------ 聯絡我們頁面 ------------ */
 .contact-page {
   max-width: 900px;
   margin: 2rem auto;
@@ -475,27 +417,30 @@ footer {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   flex: 1 1 200px;
   max-width: 250px;
-  display: flex; /* 使內容垂直置中 */
-  flex-direction: column; /* 使內容垂直排列 */
-  justify-content: center; /* 垂直置中 */
-  min-height: 120px; /* 設定最小高度以維持一致 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 120px;
 }
 
 .contact-item h3 {
   font-size: 1.3rem;
   color: #333;
   margin-bottom: 0.8rem;
-  text-align: center; /* 讓標題置中 */
+  text-align: center;
 }
 
 .contact-item p {
-  text-align: center; /* 讓內容置中 */
+  text-align: center;
 }
 
 .contact-item a {
   color: #1a5276;
-  text-decoration: none;
   font-weight: bold;
+}
+
+.contact-item a:visited {
+  color: #1a5276;
 }
 
 .contact-item a:hover {
@@ -516,9 +461,62 @@ footer {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* ------------ 頁腳 ------------ */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.footer-section {
+  margin: 1rem;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 2px solid white;
+  padding-bottom: 0.5rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section a {
+  color: white;
+  line-height: 1.8;
+}
+
+.footer-section a:visited {
+  color: white;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  text-align: center;
+  border-top: 1px solid #555;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
 /*------------ 響應式設計：針對小螢幕 (小於 768px) ------------*/
 @media (max-width: 768px) {
-  /* 隱藏桌面版導覽列，顯示漢堡選單 */
+  /* 導覽列和頁首 */
   .desktop-nav {
     display: none;
   }
@@ -527,9 +525,8 @@ footer {
     display: block;
   }
 
-  /* 導覽列和頁首 */
   header {
-    flex-direction: row; /* 在小螢幕上調整為水平排列 */
+    flex-direction: row;
     text-align: center;
     padding: 1rem;
     align-items: center;
@@ -543,7 +540,7 @@ footer {
 
   .mobile-nav.open {
     display: block;
-    top: 60px; /* Adjust based on your header height */
+    top: 60px;
   }
 
   /* 關於我們頁面 */
@@ -573,12 +570,11 @@ footer {
 
   /* 最新消息區塊 */
   .news-wrapper {
-    width: 95%; /* 確保在小螢幕上有適當的寬度 */
+    width: 95%;
   }
   
   #news-container {
-    width: 100%; /* 讓最新消息內容在小螢幕上佔滿寬度 */
-    /* margin: 0 auto; 已在桌面版定義，不再重複 */
+    width: 100%;
   }
 
   /* 頁腳 */
@@ -605,13 +601,13 @@ footer {
   }
 
   .contact-details {
-    flex-direction: column; /* 在小螢幕上垂直排列聯絡資訊 */
-    align-items: center; /* 讓聯絡資訊置中 */
+    flex-direction: column;
+    align-items: center;
   }
 
   .contact-item {
-    width: 80%; /* 讓聯絡資訊項目在小螢幕上佔據較多寬度 */
-    margin-bottom: 1rem; /* 增加項目之間的間距 */
-    min-height: auto; /* 移除最小高度限制 */
+    width: 80%;
+    margin-bottom: 1rem;
+    min-height: auto;
   }
 }
