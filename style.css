@@ -268,6 +268,12 @@ header h1 {
   text-align: center;
 }
 
+/* 新增：為 .leader 區塊內的 h3 和 p 標籤設定文字顏色 */
+.team-member.leader h3,
+.team-member.leader p {
+  color: #333; /* 確保文字顏色為深灰色，易於閱讀 */
+}
+
 .team-member.leader-solo {
   width: 100%;
   max-width: 400px;
@@ -277,6 +283,12 @@ header h1 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   margin: 0 auto;
+}
+
+/* 新增：為 .leader-solo 區塊內的 h3 和 p 標籤設定文字顏色 */
+.team-member.leader-solo h3,
+.team-member.leader-solo p {
+  color: #333; /* 確保文字顏色為深灰色，易於閱讀 */
 }
 
 /* ------------ 活動資訊頁面 ------------ */
@@ -611,3 +623,4 @@ footer {
     min-height: auto;
   }
 }
+
