@@ -69,7 +69,6 @@ header h1 {
   text-decoration: underline;
 }
 
-/* 修正連結顏色問題 */
 .desktop-nav a:visited {
   color: white;
 }
@@ -116,7 +115,6 @@ header h1 {
   background-color: #154563;
 }
 
-/* 修正連結顏色問題 */
 .mobile-nav li a:visited {
   color: white;
 }
@@ -205,7 +203,7 @@ header h1 {
   color: #1a5276;
 }
 
-/* 新增：為 .about-hero 區塊內的 p 標籤設定文字顏色 */
+/* 修正：為 .about-hero 區塊內的 p 標籤設定文字顏色 */
 .about-hero p {
   color: #333;
 }
@@ -214,6 +212,7 @@ header h1 {
   margin-bottom: 2rem;
 }
 
+/* 新增：為 .mission 區塊內的 h2 設定文字顏色 */
 .mission h2 {
   text-align: center;
   margin-bottom: 2rem;
@@ -529,7 +528,6 @@ footer {
   line-height: 1.8;
 }
 
-/* 修正連結顏色問題 */
 .footer-section a:visited {
   color: white;
 }
