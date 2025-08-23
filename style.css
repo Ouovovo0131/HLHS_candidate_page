@@ -7,11 +7,11 @@
 
 .top-layer {
   background-image: url("images/HLHS_2.jpg");
-  background-size: 100% auto;
+  background-size: cover; /* 關鍵：讓圖片填滿容器，不留白邊 */
   background-position: center;
   background-repeat: no-repeat;
   padding: 1rem 1rem;
-  height: 25rem;
+  height: 25rem; /* 保持原來的固定高度 */
   color: white;
 }
 
@@ -605,3 +605,4 @@ footer {
     min-height: auto; /* 移除最小高度限制 */
   }
 }
+
