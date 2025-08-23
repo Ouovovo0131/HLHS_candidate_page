@@ -69,6 +69,7 @@ header h1 {
   text-decoration: underline;
 }
 
+/* 修正連結顏色問題 */
 .desktop-nav a:visited {
   color: white;
 }
@@ -115,6 +116,7 @@ header h1 {
   background-color: #154563;
 }
 
+/* 修正連結顏色問題 */
 .mobile-nav li a:visited {
   color: white;
 }
@@ -466,6 +468,7 @@ header h1 {
   font-weight: bold;
 }
 
+/* 修正連結顏色問題 */
 .contact-item a:visited {
   color: #1a5276;
 }
@@ -526,6 +529,7 @@ footer {
   line-height: 1.8;
 }
 
+/* 修正連結顏色問題 */
 .footer-section a:visited {
   color: white;
 }
