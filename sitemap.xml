@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://ouovovo0131.github.io/HLHS_candidate_page/</loc>
-        <lastmod>2025-08-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
+  <url>
+    <loc>https://ouovovo0131.github.io/HLHS_candidate_page/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ouovovo0131.github.io/HLHS_candidate_page/about.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ouovovo0131.github.io/HLHS_candidate_page/events.html</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>
