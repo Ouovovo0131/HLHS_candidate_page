@@ -594,6 +594,13 @@ footer {
   margin-bottom: 2rem;
   color: #1a5276;
 }
+  .mission-item h3 {
+  color: #1a5276; /* 為標題設定一個深色，例如與頁首標題相同的顏色 */
+}
+
+  .mission-item p {
+  color: #333; /* 為段落文字設定深灰色 */
+}
 
   /* 團隊成員區塊 */
   .team-member.leader {
@@ -650,4 +657,5 @@ footer {
     min-height: auto;
   }
 }
+
 
