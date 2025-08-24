@@ -191,7 +191,7 @@ header h1 {
 
 .about-hero {
   text-align: center;
-  background-color: #f8f9fa;
+  background-color: #e5eaf0;
   padding: 3rem 2rem;
   border-radius: 10px;
   margin-bottom: 2rem;
@@ -228,7 +228,7 @@ header h1 {
 
 .mission-item {
   flex: 1 1 300px;
-  background-color: #e9ecef;
+  background-color: #e5eaf0;
   padding: 2rem;
   border-radius: 8px;
   text-align: center;
@@ -665,6 +665,7 @@ footer {
     min-height: auto;
   }
 }
+
 
 
 
