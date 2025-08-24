@@ -238,6 +238,9 @@ header h1 {
 .mission-item p {
   color: #333;
 }
+.mission-item h3 {
+  color: #1a5276;
+}
 
 .organization {
   text-align: center;
@@ -253,6 +256,11 @@ header h1 {
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.organization h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1a5276;
 }
 
 .team {
@@ -657,5 +665,6 @@ footer {
     min-height: auto;
   }
 }
+
 
 
