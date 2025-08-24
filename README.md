@@ -14,12 +14,7 @@
 ---
 
 ## 🌐 網站連結
-👉 [點我前往班聯會網站](https://你的帳號.github.io/你的專案/)  
-
----
-
-## 📸 預覽截圖
-![網站首頁](./screenshot.png)
+👉 [點我前往班聯會網站](https://ouovovo0131.github.io/HLHS_candidate_page/)  
 
 ---
 
@@ -29,7 +24,7 @@
 ---
 
 ## 🤝 聯絡我們
-- Instagram：[hlhs_csie](https://www.instagram.com/hlhs_csie/)  
+- Instagram：[hlhs_csie](https://www.instagram.com/hlhs_student.union?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==)  
 - Email：student_union@example.com  
 
 ---
