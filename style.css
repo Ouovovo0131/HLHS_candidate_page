@@ -244,6 +244,10 @@ header h1 {
   margin-bottom: 2rem;
 }
 
+.organization p {
+  color: #333;
+}
+
 .organization img {
   max-width: 100%;
   height: auto;
@@ -585,6 +589,12 @@ footer {
     flex-direction: column;
   }
 
+  .mission h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1a5276;
+}
+
   /* 團隊成員區塊 */
   .team-member.leader {
     flex: 1 1 90%;
@@ -640,3 +650,4 @@ footer {
     min-height: auto;
   }
 }
+
