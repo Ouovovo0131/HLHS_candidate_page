@@ -25,7 +25,7 @@
 
 ## 🤝 聯絡我們
 - Instagram：[hlhs_csie](https://www.instagram.com/hlhs_student.union?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==)  
-- Email：student_union@example.com  
+- Email：ofstud09@hlhs.hlc.edu.tw  
 
 ---
 
