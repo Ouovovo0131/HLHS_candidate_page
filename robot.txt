@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /assets/
+Disallow: /images/
+Allow: /
+
+Sitemap: https://ouovovo0131.github.io/HLHS_candidate_page/sitemap.xml
