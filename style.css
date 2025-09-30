@@ -555,7 +555,6 @@ footer {
   margin-top: 1rem;
 }
 
-/*------------ 響應式設計：針對小螢幕 (小於 768px) ------------*/
 @media (max-width: 768px) {
   /* 導覽列和頁首 */
   .desktop-nav {
@@ -582,6 +581,11 @@ footer {
   .mobile-nav.open {
     display: block;
     top: 60px;
+  }
+  
+  /* Welcome 區塊優化 */
+  .welcome h2 {
+    font-size: 1.5rem; /* 縮小標題字體 */
   }
 
   /* 關於我們頁面 */
@@ -622,14 +626,46 @@ footer {
     width: 90%;
   }
 
-  /* 最新消息區塊 */
+  /* 最新消息區塊 (針對 index.html 優化) */
   .news-wrapper {
-    width: 95%;
+    width: 95%; /* 確保左右留白 */
+    padding: 0 0.5rem; /* 增加內邊距 */
   }
   
-  #news-container {
-    width: 100%;
+  .news-header {
+      padding: 1rem; /* 縮小標頭內邊距 */
+      margin-bottom: 1rem;
   }
+
+  .news-header h2 {
+      font-size: 1.8rem; /* 縮小標題字體 */
+  }
+
+  #news-container {
+    box-shadow: none; /* 在手機上可以移除陰影，更簡潔 */
+    border-radius: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .news-content {
+    padding: 1rem; /* 縮小內容區塊內邊距 */
+    border-radius: 4px;
+  }
+
+  .news-item {
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .news-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+  }
+  
+  .news-text {
+      font-size: 0.95rem;
+  }
+
 
   /* 頁腳 */
   .footer-container {
@@ -665,7 +701,3 @@ footer {
     min-height: auto;
   }
 }
-
-
-
-
