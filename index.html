@@ -18,8 +18,10 @@
     <div class="top-layer">
         <header>
         <h1>
-            <img src="images/Logo_HLHS.png" alt="花中班聯會 Logo" class="logo" />
-            花中班聯會官方網站
+            <a href="index.html" class="brand-link">
+                <img src="images/Logo_HLHS.png" alt="花中班聯會 Logo" class="logo" />
+                花中班聯會官方網站
+            </a>
         </h1>
         <button class="hamburger" id="hamburger">
             <i class="fas fa-bars"></i>
@@ -53,45 +55,61 @@
         <div class="news-header">
             <h2>最新消息</h2>
         </div>
-         <section id="news-container">
-         <div class="news-content">
-             <ul>
-                 <li>
-                 <div class="news-item">
-                   <h3 class="news-title">外送試辦</h3>
-                   <p class="news-text">9/26為外送方式的試營運，讓未來開放外送的可能成真</p>
-                 </div>
-                 </li>
-             </ul>
-         </div>
-        </section>
 
-        <section id="news-container">
-        <div class="news-content">
-             <ul>
-                 <li>
-                 <div class="news-item">
-                   <h3 class="news-title">優惠訊息</h3>
-                   <p class="news-text">我們有和許多商家簽約，只要出示學生證就能獲得優惠，詳情請看https://reurl.cc/z5jzoN</p>
-                 </div>
-                 </li>
-             </ul>
-         </div>
-        </section>
-      
-        <section id="news-container">
-        <div class="news-content">
-            <ul>
-                <li>
-                <div class="news-item">
-                  <h3 class="news-title">新生訊息</h3>
-                  <p class="news-text">8/26、8/27是新生訓練，請新生們不要遲到!</p>
+        <!-- 使用 grid 版面：左大右三小 -->
+        <div class="parent">
+            <div class="div1">
+                <div class="news-content">
+                    <ul>
+                        <li>
+                            <div class="news-item">
+                                <h3 class="news-title">優惠訊息</h3>
+                                <p class="news-text text-xl">我們有和許多商家簽約，只要出示學生證就能獲得優惠，詳情請看 <a href="https://reurl.cc/z5jzoN" target="_blank">連結</a></p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                </li>
-            </ul>
-        </div>
-        </section>
+            </div>
 
+            <div class="div2">
+                <div class="news-content">
+                    <ul>
+                        <li>
+                            <div class="news-item">
+                                <h3 class="news-title">外送試辦</h3>
+                                <p class="news-text text-xl">9/26為外送的第一次試營運，請大家多多參加</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="div3">
+                <div class="news-content">
+                    <ul>
+                        <li>
+                            <div class="news-item">
+                                <h3 class="news-title">外送試辦</h3>
+                                <p class="news-text text-xl">10/31為外送試辦的第二次，請同學踴躍參與</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="div4">
+                <div class="news-content">
+                    <ul>
+                        <li>
+                            <div class="news-item">
+                                <h3 class="news-title">更多消息</h3>
+                                <p class="news-text text-xl"><a href="events.html">查看全部活動與公告</a></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
     </div>
 
@@ -129,6 +147,7 @@
             });
         });
     });
+</script>
 </script>
 </body>
 </html>
