@@ -42,6 +42,18 @@ header h1 {
   margin: 0;
 }
 
+/* Brand link: 讓 header 的 logo 與站名維持白色（即使為 visited/link/hover） */
+.brand-link,
+.brand-link:visited,
+.brand-link:link,
+.brand-link:active,
+.brand-link:hover {
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .logo {
   height: 40px;
   vertical-align: middle;
