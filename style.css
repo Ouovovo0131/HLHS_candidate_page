@@ -7,27 +7,29 @@
 
 /* ------------ 全站通用樣式 ------------ */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   line-height: 1.6;
+  color: #213547;
+  background: linear-gradient(180deg, #f2f7fc 0%, #ffffff 48%, #f4f8fd 100%);
 }
 
 a {
   text-decoration: none;
+  color: #1f6fa3;
 }
 
 :root {
-  --campus-ink: #18324a;
-  --campus-board: rgba(255, 247, 223, 0.92);
-  --campus-board-border: rgba(115, 89, 41, 0.28);
-  --campus-tag: #fef3cf;
-  --campus-tag-hover: #ffe6a3;
-  --campus-accent: #2f7f5f;
-  --campus-accent-deep: #1f5f45;
+  --primary: #1a5276;
+  --primary-deep: #0b2740;
+  --primary-soft: #7fd4ff;
+  --surface: #ffffff;
+  --surface-muted: #edf3f9;
+  --border-soft: #d5e3ef;
 }
 
 /* ------------ 頁首與導覽列 ------------ */
 .top-layer {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("images/HLHS_2.jpg");
+  background-image: linear-gradient(rgba(9, 33, 57, 0.46), rgba(13, 42, 70, 0.42)), url("images/HLHS_2.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -62,6 +64,7 @@ header h1 {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
 }
 
 .logo {
@@ -73,12 +76,11 @@ header h1 {
 /* 桌面版導覽列樣式 */
 .desktop-nav {
   display: block;
-  background: var(--campus-board);
-  border: 1px solid var(--campus-board-border);
-  border-radius: 16px;
+  background: rgba(10, 38, 63, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
   backdrop-filter: blur(6px);
-  box-shadow: 0 10px 22px rgba(37, 31, 19, 0.18);
-  padding: 0.35rem 0.45rem;
+  padding: 0.35rem;
 }
 
 .desktop-nav ul {
@@ -96,28 +98,26 @@ header h1 {
 }
 
 .desktop-nav a {
-  color: var(--campus-ink);
+  color: white;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-width: 6.2rem;
   padding: 0.55rem 1rem;
-  border-radius: 11px;
-  background: var(--campus-tag);
-  border: 1px solid rgba(123, 97, 47, 0.23);
+  border-radius: 999px;
   font-weight: 700;
   letter-spacing: 0.02em;
-  transition: transform 0.22s ease, background-color 0.22s ease, box-shadow 0.22s ease, color 0.22s ease;
+  transition: transform 0.22s ease, background-color 0.22s ease, box-shadow 0.22s ease;
 }
 
 .desktop-nav a:hover {
   transform: translateY(-1px);
-  background: var(--campus-tag-hover);
-  box-shadow: 0 8px 18px rgba(57, 42, 16, 0.2);
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 18px rgba(8, 24, 43, 0.25);
 }
 
 .desktop-nav a:visited {
-  color: var(--campus-ink);
+  color: white;
 }
 
 .desktop-nav a::after {
@@ -128,7 +128,7 @@ header h1 {
   bottom: 0.4rem;
   height: 2px;
   border-radius: 99px;
-  background: var(--campus-accent);
+  background: rgba(255, 255, 255, 0.92);
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.22s ease;
@@ -140,36 +140,35 @@ header h1 {
 
 .desktop-nav a[aria-current="page"],
 .mobile-nav a[aria-current="page"] {
-  background: linear-gradient(135deg, #54b88d 0%, #328a69 100%);
-  color: #ffffff;
-  border-color: rgba(18, 81, 57, 0.3);
-  box-shadow: 0 10px 20px rgba(26, 79, 57, 0.35);
+  background: linear-gradient(135deg, #7fd4ff 0%, #37a9ff 100%);
+  color: #0b2740;
+  box-shadow: 0 10px 20px rgba(0, 39, 71, 0.35);
 }
 
 .desktop-nav a[aria-current="page"]::after {
   transform: scaleX(1);
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(11, 39, 64, 0.8);
 }
 
 /* 漢堡選單樣式 */
 .hamburger {
   display: none;
-  background: rgba(255, 245, 215, 0.95);
-  border: 1px solid rgba(131, 103, 53, 0.38);
+  background: rgba(10, 38, 63, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   width: 2.6rem;
   height: 2.6rem;
   border-radius: 50%;
-  color: #214664;
+  color: white;
   font-size: 1.5rem;
   cursor: pointer;
-  box-shadow: 0 8px 16px rgba(55, 38, 8, 0.18);
+  box-shadow: 0 8px 16px rgba(8, 24, 43, 0.24);
   transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hamburger:hover {
   transform: scale(1.05);
-  background: #ffecb4;
-  box-shadow: 0 10px 22px rgba(55, 38, 8, 0.24);
+  background: rgba(10, 38, 63, 0.92);
+  box-shadow: 0 10px 22px rgba(8, 24, 43, 0.3);
 }
 
 /* 行動版導覽列樣式 */
@@ -179,11 +178,11 @@ header h1 {
   top: calc(100% + 0.6rem);
   right: 0.75rem;
   width: min(84vw, 18rem);
-  background: rgba(255, 249, 232, 0.98);
-  border: 1px solid rgba(127, 99, 45, 0.24);
+  background: rgba(8, 29, 49, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 14px;
   text-align: center;
-  box-shadow: 0 14px 28px rgba(44, 32, 12, 0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(6px);
 }
 
@@ -203,26 +202,24 @@ header h1 {
   display: block;
   padding: 0.75rem 1rem;
   border-radius: 9px;
-  color: var(--campus-ink);
-  background: #fff6d8;
-  border: 1px solid rgba(127, 99, 45, 0.18);
+  color: white;
   font-weight: 700;
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .mobile-nav li a:hover {
-  background-color: #ffe6a3;
+  background-color: rgba(127, 212, 255, 0.22);
   transform: translateY(-1px);
 }
 
 .mobile-nav li a:visited {
-  color: var(--campus-ink);
+  color: white;
 }
 
 .mobile-nav li a[aria-current="page"],
 .mobile-nav li a[aria-current="page"]:visited {
-  color: #ffffff;
-  background: linear-gradient(135deg, #54b88d 0%, #328a69 100%);
+  color: #0b2740;
+  background: linear-gradient(135deg, #7fd4ff 0%, #37a9ff 100%);
 }
 
 /* welcome 區塊 */
@@ -236,13 +233,18 @@ header h1 {
   margin-bottom: 1.5rem;
   text-align: center;
   font-size: 2rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+}
+
+.welcome h2 {
+  letter-spacing: 0.03em;
 }
 
 /* ------------ 首頁 ------------ */
 .news-wrapper {
   max-width: 1200px;
-  margin: 1.25rem auto;
-  padding: 0;
+  margin: 1.8rem auto;
+  padding: 0 0.8rem;
 }
 
 #news-container {
@@ -255,13 +257,15 @@ header h1 {
 }
 
 .news-header {
-  background-color: #1a5276;
+  background: linear-gradient(120deg, #1a5276 0%, #2f7aa8 45%, #4ea2d1 100%);
   color: white;
-  padding: 1.5rem;
+  padding: 1.6rem;
   text-align: center;
   margin: 0 auto 1.5rem auto;
   width: 100%;
   max-width: 1200px;
+  border-radius: 12px;
+  box-shadow: 0 10px 22px rgba(19, 57, 84, 0.25);
 }
 
 .news-header h2 {
@@ -269,10 +273,10 @@ header h1 {
 }
 
 .news-content {
-  /* 外層淡白色框：加深一點以提高對比度（由 #f4f4f4 -> #ececec） */
-  background-color: #ececec;
+  background-color: var(--surface-muted);
   padding: 1.25rem;
-  border-radius: 8px;
+  border-radius: 12px;
+  border: 1px solid var(--border-soft);
 }
 
 /* Grid 版面（改為左右兩欄，自動高度）
@@ -356,10 +360,16 @@ header h1 {
 .news-item {
   background-color: white;
   padding: 1rem;
-  /* 內框邊線改為稍深，以和外框形成清晰層次 */
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
+  border: 1px solid #d8e6f2;
+  border-radius: 10px;
   text-align: center;
+  box-shadow: 0 6px 14px rgba(18, 55, 83, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(18, 55, 83, 0.14);
 }
 
 /* ------------ 關於我們 ------------ */
@@ -371,16 +381,18 @@ header h1 {
 
 .about-hero {
   text-align: center;
-  background-color: #e5eaf0;
+  background: linear-gradient(160deg, #e8f3fb 0%, #d8e8f6 100%);
   padding: 3rem 2rem;
-  border-radius: 10px;
+  border-radius: 14px;
   margin-bottom: 2rem;
+  border: 1px solid #d2e1ee;
+  box-shadow: 0 10px 22px rgba(20, 60, 89, 0.1);
 }
 
 .about-hero h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #1a5276;
+  color: var(--primary);
 }
 
 /* 修正：為 .about-hero 區塊內的 p 標籤設定文字顏色 */
@@ -396,7 +408,7 @@ header h1 {
 .mission h2 {
   text-align: center;
   margin-bottom: 2rem;
-  color: #1a5276;
+  color: var(--primary);
 }
 
 .mission-content {
@@ -408,10 +420,18 @@ header h1 {
 
 .mission-item {
   flex: 1 1 300px;
-  background-color: #e5eaf0;
+  background: var(--surface);
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 8px 18px rgba(18, 55, 83, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mission-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 24px rgba(18, 55, 83, 0.14);
 }
 
 /* 新增：為 .mission-item 區塊內的 p 標籤設定文字顏色 */
@@ -419,7 +439,7 @@ header h1 {
   color: #333;
 }
 .mission-item h3 {
-  color: #1a5276;
+  color: var(--primary);
 }
 
 .organization {
@@ -440,7 +460,7 @@ header h1 {
 .organization h2 {
   text-align: center;
   margin-bottom: 2rem;
-  color: #1a5276;
+  color: var(--primary);
 }
 
 .team {
@@ -450,7 +470,7 @@ header h1 {
 .team h2 {
   text-align: center;
   margin-bottom: 2rem;
-  color: #1a5276;
+  color: var(--primary);
 }
 
 .team-row {
@@ -464,11 +484,12 @@ header h1 {
 .team-member.leader {
   flex: 1 1 250px;
   max-width: 400px;
-  background-color: #f8f9fa;
+  background: var(--surface);
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(18, 55, 83, 0.09);
   text-align: center;
+  border: 1px solid var(--border-soft);
 }
 
 /* 修正：為 .leader 區塊內的 h3 和 p 標籤設定文字顏色 */
@@ -480,12 +501,13 @@ header h1 {
 .team-member.leader-solo {
   width: 100%;
   max-width: 400px;
-  background-color: #f8f9fa;
+  background: var(--surface);
   padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(18, 55, 83, 0.09);
   text-align: center;
   margin: 0 auto;
+  border: 1px solid var(--border-soft);
 }
 
 /* 修正：為 .leader-solo 區塊內的 h3 和 p 標籤設定文字顏色 */
@@ -506,7 +528,7 @@ header h1 {
 }
 
 .events-outline h2 {
-  color: #1a5276;
+  color: var(--primary);
   text-align: center;
   margin-bottom: 1.5rem;
   font-size: 2.2rem;
@@ -520,16 +542,23 @@ header h1 {
 
 .event-item {
   display: flex;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--surface);
+  border-radius: 12px;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 10px 20px rgba(18, 55, 83, 0.09);
   padding: 1.5rem;
   align-items: center;
   gap: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px rgba(18, 55, 83, 0.14);
 }
 
 .event-date {
-  background-color: #1a5276;
+  background: linear-gradient(140deg, #1a5276 0%, #2f7aa8 100%);
   color: white;
   padding: 0.8rem 1.2rem;
   border-radius: 8px;
@@ -567,7 +596,7 @@ header h1 {
 
 .related-events h2 {
   font-size: 2rem;
-  color: #1a5276;
+  color: var(--primary);
   margin-bottom: 1.5rem;
 }
 
@@ -579,10 +608,11 @@ header h1 {
 }
 
 .related-event-item {
-  background-color: #e9ecef;
+  background-color: var(--surface);
   padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 8px 18px rgba(18, 55, 83, 0.09);
   text-align: left;
   flex: 1 1 250px;
   max-width: 350px;
@@ -602,17 +632,18 @@ header h1 {
 
 .contact-info,
 .contact-form-section {
-  background-color: #f8f9fa;
+  background: var(--surface);
   padding: 2.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 10px 20px rgba(18, 55, 83, 0.08);
   margin-bottom: 2rem;
   text-align: center;
 }
 
 .contact-info h2,
 .contact-form-section h2 {
-  color: #1a5276;
+  color: var(--primary);
   font-size: 2.2rem;
   margin-bottom: 1.5rem;
 }
@@ -631,10 +662,11 @@ header h1 {
 }
 
 .contact-item {
-  background-color: white;
+  background-color: var(--surface-muted);
   padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 6px 14px rgba(18, 55, 83, 0.07);
   flex: 1 1 200px;
   max-width: 250px;
   display: flex;
@@ -655,13 +687,13 @@ header h1 {
 }
 
 .contact-item a {
-  color: #1a5276;
+  color: var(--primary);
   font-weight: bold;
 }
 
 /* 修正連結顏色問題 */
 .contact-item a:visited {
-  color: #1a5276;
+  color: var(--primary);
 }
 
 .contact-item a:hover {
@@ -684,7 +716,7 @@ header h1 {
 
 /* ------------ 頁腳 ------------ */
 footer {
-  background-color: #333;
+  background: linear-gradient(120deg, #0d2d4a 0%, #16486d 70%, #1f5f87 100%);
   color: white;
   padding: 2rem 1rem;
   font-size: 0.9rem;
@@ -705,7 +737,7 @@ footer {
 .footer-section h3 {
   font-size: 1.2rem;
   margin-bottom: 0.8rem;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.8);
   padding-bottom: 0.5rem;
 }
 
