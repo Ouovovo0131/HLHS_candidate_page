@@ -15,6 +15,16 @@ a {
   text-decoration: none;
 }
 
+:root {
+  --campus-ink: #18324a;
+  --campus-board: rgba(255, 247, 223, 0.92);
+  --campus-board-border: rgba(115, 89, 41, 0.28);
+  --campus-tag: #fef3cf;
+  --campus-tag-hover: #ffe6a3;
+  --campus-accent: #2f7f5f;
+  --campus-accent-deep: #1f5f45;
+}
+
 /* ------------ 頁首與導覽列 ------------ */
 .top-layer {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("images/HLHS_2.jpg");
@@ -63,11 +73,12 @@ header h1 {
 /* 桌面版導覽列樣式 */
 .desktop-nav {
   display: block;
-  background: rgba(10, 38, 63, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 999px;
+  background: var(--campus-board);
+  border: 1px solid var(--campus-board-border);
+  border-radius: 16px;
   backdrop-filter: blur(6px);
-  padding: 0.35rem;
+  box-shadow: 0 10px 22px rgba(37, 31, 19, 0.18);
+  padding: 0.35rem 0.45rem;
 }
 
 .desktop-nav ul {
@@ -85,26 +96,28 @@ header h1 {
 }
 
 .desktop-nav a {
-  color: white;
+  color: var(--campus-ink);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-width: 6.2rem;
   padding: 0.55rem 1rem;
-  border-radius: 999px;
+  border-radius: 11px;
+  background: var(--campus-tag);
+  border: 1px solid rgba(123, 97, 47, 0.23);
   font-weight: 700;
   letter-spacing: 0.02em;
-  transition: transform 0.22s ease, background-color 0.22s ease, box-shadow 0.22s ease;
+  transition: transform 0.22s ease, background-color 0.22s ease, box-shadow 0.22s ease, color 0.22s ease;
 }
 
 .desktop-nav a:hover {
   transform: translateY(-1px);
-  background: rgba(255, 255, 255, 0.18);
-  box-shadow: 0 8px 18px rgba(8, 24, 43, 0.25);
+  background: var(--campus-tag-hover);
+  box-shadow: 0 8px 18px rgba(57, 42, 16, 0.2);
 }
 
 .desktop-nav a:visited {
-  color: white;
+  color: var(--campus-ink);
 }
 
 .desktop-nav a::after {
@@ -115,7 +128,7 @@ header h1 {
   bottom: 0.4rem;
   height: 2px;
   border-radius: 99px;
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--campus-accent);
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.22s ease;
@@ -127,33 +140,36 @@ header h1 {
 
 .desktop-nav a[aria-current="page"],
 .mobile-nav a[aria-current="page"] {
-  background: linear-gradient(135deg, #7fd4ff 0%, #37a9ff 100%);
-  color: #0b2740;
-  box-shadow: 0 10px 20px rgba(0, 39, 71, 0.35);
+  background: linear-gradient(135deg, #54b88d 0%, #328a69 100%);
+  color: #ffffff;
+  border-color: rgba(18, 81, 57, 0.3);
+  box-shadow: 0 10px 20px rgba(26, 79, 57, 0.35);
 }
 
 .desktop-nav a[aria-current="page"]::after {
   transform: scaleX(1);
-  background: rgba(11, 39, 64, 0.8);
+  background: rgba(255, 255, 255, 0.85);
 }
 
 /* 漢堡選單樣式 */
 .hamburger {
   display: none;
-  background: rgba(10, 38, 63, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 245, 215, 0.95);
+  border: 1px solid rgba(131, 103, 53, 0.38);
   width: 2.6rem;
   height: 2.6rem;
   border-radius: 50%;
-  color: white;
+  color: #214664;
   font-size: 1.5rem;
   cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 8px 16px rgba(55, 38, 8, 0.18);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hamburger:hover {
   transform: scale(1.05);
-  background: rgba(10, 38, 63, 0.92);
+  background: #ffecb4;
+  box-shadow: 0 10px 22px rgba(55, 38, 8, 0.24);
 }
 
 /* 行動版導覽列樣式 */
@@ -163,11 +179,11 @@ header h1 {
   top: calc(100% + 0.6rem);
   right: 0.75rem;
   width: min(84vw, 18rem);
-  background: rgba(8, 29, 49, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 249, 232, 0.98);
+  border: 1px solid rgba(127, 99, 45, 0.24);
   border-radius: 14px;
   text-align: center;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 14px 28px rgba(44, 32, 12, 0.22);
   backdrop-filter: blur(6px);
 }
 
@@ -187,17 +203,26 @@ header h1 {
   display: block;
   padding: 0.75rem 1rem;
   border-radius: 9px;
-  color: white;
+  color: var(--campus-ink);
+  background: #fff6d8;
+  border: 1px solid rgba(127, 99, 45, 0.18);
   font-weight: 700;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .mobile-nav li a:hover {
-  background-color: rgba(127, 212, 255, 0.22);
+  background-color: #ffe6a3;
+  transform: translateY(-1px);
 }
 
 .mobile-nav li a:visited {
-  color: white;
+  color: var(--campus-ink);
+}
+
+.mobile-nav li a[aria-current="page"],
+.mobile-nav li a[aria-current="page"]:visited {
+  color: #ffffff;
+  background: linear-gradient(135deg, #54b88d 0%, #328a69 100%);
 }
 
 /* welcome 區塊 */
