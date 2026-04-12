@@ -684,11 +684,18 @@ header h1 {
 
 .contact-item p {
   text-align: center;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .contact-item a {
   color: var(--primary);
   font-weight: bold;
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 /* 修正連結顏色問題 */
@@ -750,6 +757,8 @@ footer {
 .footer-section a {
   color: white;
   line-height: 1.8;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .footer-section a:visited {
