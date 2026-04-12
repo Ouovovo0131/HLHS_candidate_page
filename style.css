@@ -30,7 +30,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0rem 1rem;
+  padding: 0.35rem 1rem;
   position: relative;
   z-index: 1000;
 }
@@ -63,48 +63,112 @@ header h1 {
 /* 桌面版導覽列樣式 */
 .desktop-nav {
   display: block;
+  background: rgba(10, 38, 63, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  padding: 0.35rem;
 }
 
 .desktop-nav ul {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 0.4rem;
   margin: 0;
   padding: 0;
 }
 
+.desktop-nav a,
+.mobile-nav a {
+  position: relative;
+  overflow: hidden;
+}
+
 .desktop-nav a {
   color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 6.2rem;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: transform 0.22s ease, background-color 0.22s ease, box-shadow 0.22s ease;
 }
 
 .desktop-nav a:hover {
-  text-decoration: underline;
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 18px rgba(8, 24, 43, 0.25);
 }
 
 .desktop-nav a:visited {
   color: white;
 }
 
+.desktop-nav a::after {
+  content: "";
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  bottom: 0.4rem;
+  height: 2px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.92);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.22s ease;
+}
+
+.desktop-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.desktop-nav a[aria-current="page"],
+.mobile-nav a[aria-current="page"] {
+  background: linear-gradient(135deg, #7fd4ff 0%, #37a9ff 100%);
+  color: #0b2740;
+  box-shadow: 0 10px 20px rgba(0, 39, 71, 0.35);
+}
+
+.desktop-nav a[aria-current="page"]::after {
+  transform: scaleX(1);
+  background: rgba(11, 39, 64, 0.8);
+}
+
 /* 漢堡選單樣式 */
 .hamburger {
   display: none;
-  background: none;
-  border: none;
+  background: rgba(10, 38, 63, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
   color: white;
   font-size: 1.5rem;
   cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.hamburger:hover {
+  transform: scale(1.05);
+  background: rgba(10, 38, 63, 0.92);
 }
 
 /* 行動版導覽列樣式 */
 .mobile-nav {
   display: none;
   position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background-color: #1a5276;
+  top: calc(100% + 0.6rem);
+  right: 0.75rem;
+  width: min(84vw, 18rem);
+  background: rgba(8, 29, 49, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(6px);
 }
 
 .mobile-nav.open {
@@ -113,18 +177,23 @@ header h1 {
 
 .mobile-nav ul {
   list-style: none;
-  padding: 1rem 0;
+  padding: 0.6rem;
   margin: 0;
+  display: grid;
+  gap: 0.35rem;
 }
 
 .mobile-nav li a {
   display: block;
-  padding: 0.8rem 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 9px;
   color: white;
+  font-weight: 700;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .mobile-nav li a:hover {
-  background-color: #154563;
+  background-color: rgba(127, 212, 255, 0.22);
 }
 
 .mobile-nav li a:visited {
@@ -649,6 +718,7 @@ footer {
 
   .hamburger {
     display: block;
+    font-size: 1.2rem;
   }
 
   header {
@@ -666,7 +736,7 @@ footer {
 
   .mobile-nav.open {
     display: block;
-    top: 60px;
+    top: calc(100% + 0.55rem);
   }
   
   /* Welcome 區塊優化 */
