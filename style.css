@@ -257,7 +257,7 @@ header h1 {
 }
 
 .news-header {
-  background: linear-gradient(120deg, #1a5276 0%, #2f7aa8 45%, #4ea2d1 100%);
+  background-color: #1a5276;
   color: white;
   padding: 1.6rem;
   text-align: center;
